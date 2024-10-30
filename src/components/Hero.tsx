@@ -19,14 +19,6 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />
       </div>
 
-      {/* 语言切换按钮 */}
-      {/* <button
-        onClick={toggleLanguage}
-        className="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-gray-800 transition-all"
-      >
-        <Globe className="h-6 w-6" />
-        <span className="ml-2">{i18n.language === 'zh' ? 'EN' : '中文'}</span>
-      </button> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
         <div className="text-center">

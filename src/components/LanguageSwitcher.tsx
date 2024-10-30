@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
       className="flex items-center text-white p-2 rounded-full hover:bg-gray-800 transition-all"
     >
       <Globe className="h-5 w-5" />
-      <span className="ml-2">{i18n.language === 'zh' ? 'EN' : '中文'}</span>
+      <span className="ml-2">{i18n.language === 'zh' ? 'EN' : 'ZH'}</span>
     </button>
   );
 } 
