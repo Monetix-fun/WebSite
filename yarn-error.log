@@ -1,0 +1,63 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add react-icons
+
+PATH: 
+  /opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/whisper/.local/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: self-signed certificate in certificate chain
+      at TLSSocket.onConnectSecure (node:_tls_wrap:1540:34)
+      at TLSSocket.emit (node:events:513:28)
+      at TLSSocket._finishInit (node:_tls_wrap:959:8)
+      at ssl.onhandshakedone (node:_tls_wrap:743:12)
+
+npm manifest: 
+  {
+      "name": "Monetix",
+      "private": true,
+      "version": "0.0.1",
+      "type": "module",
+      "scripts": {
+          "dev": "vite",
+          "build": "vite build",
+          "lint": "eslint .",
+          "preview": "vite preview"
+      },
+      "dependencies": {
+          "lucide-react": "^0.344.0",
+          "react": "^18.3.1",
+          "react-dom": "^18.3.1",
+          "react-icons": "^5.3.0"
+      },
+      "devDependencies": {
+          "@eslint/js": "^9.9.1",
+          "@types/react": "^18.3.5",
+          "@types/react-dom": "^18.3.0",
+          "@vitejs/plugin-react": "^4.3.1",
+          "autoprefixer": "^10.4.18",
+          "eslint": "^9.9.1",
+          "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+          "eslint-plugin-react-refresh": "^0.4.11",
+          "globals": "^15.9.0",
+          "postcss": "^8.4.35",
+          "tailwindcss": "^3.4.1",
+          "typescript": "^5.5.3",
+          "typescript-eslint": "^8.3.0",
+          "vite": "^5.4.2"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
