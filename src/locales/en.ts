@@ -41,7 +41,7 @@ export default {
     },
     decentralized: {
       title: 'Decentralized',
-      description: 'True DeFi with no central authority. Governed by SNX token holders.'
+      description: 'True DeFi with no central authority. Governed by token holders.'
     }
   },
   footer: {

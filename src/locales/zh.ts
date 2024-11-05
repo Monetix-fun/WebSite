@@ -41,7 +41,7 @@ export default {
     },
     decentralized: {
       title: '去中心化',
-      description: '真正的DeFi，没有中心化权威。由SNX代币持有者治理。'
+      description: '真正的DeFi，没有中心化权威。由代币持有者治理。'
     }
   },
   footer: {
