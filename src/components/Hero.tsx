@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import monadLogo from '../assets/images/monad_logo.svg';
 
 export default function Hero() {
   const { t, i18n } = useTranslation();
@@ -58,6 +59,24 @@ export default function Hero() {
               <div className="text-gray-400">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        {/* Powered by Monad */}
+        <div className="mt-8 text-center">
+          <a 
+            href="https://www.monad.xyz/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-gray-400 hover:text-gray-300"
+          >
+            Powered by 
+            <img 
+              src={monadLogo} 
+              alt="Monad Logo" 
+              className="h-4 ml-2 opacity-75 hover:opacity-100 transition-opacity"
+              style={{ filter: 'invert(70%) sepia(8%) saturate(176%) hue-rotate(176deg) brightness(87%) contrast(85%)' }}
+            />
+          </a>
         </div>
       </div>
     </div>
