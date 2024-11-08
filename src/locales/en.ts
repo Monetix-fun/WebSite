@@ -67,5 +67,14 @@ export default {
     connect: 'Connect Wallet',
     disconnect: 'Disconnect',
     balance: 'Balance'
+  },
+  "modal": {
+    "terms": {
+      "title": "Terms of Service",
+      "description": "By using this website, you accept the following policies, terms and conditions",
+      "agreement": "I have read and agree to the <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>",
+      "notUsPerson": "I am not a US Person",
+      "agreeButton": "Agree and Continue"
+    }
   }
 } 

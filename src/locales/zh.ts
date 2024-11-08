@@ -67,5 +67,14 @@ export default {
     connect: '连接钱包',
     disconnect: '断开连接',
     balance: '余额'
+  },
+  "modal": {
+    "terms": {
+      "title": "服务条款",
+      "description": "使用本网站即表示您接受以下政策、条款和条件",
+      "agreement": "我已阅读并同意<terms>服务条款</terms>和<privacy>隐私政策</privacy>",
+      "notUsPerson": "我不是美国公民",
+      "agreeButton": "同意并继续"
+    }
   }
 } 
