@@ -11,6 +11,87 @@ export default {
     docs: 'Docs',
     community: 'Community',
   },
+  home: {
+    title: 'Decentralized Synthetic Asset Platform',
+    description: 'Build custom synthetic assets that mirror real-world assets or represent new financial constructs. Access a global marketplace where synthetic assets can be traded seamlessly and securely. Participate in a transparent and open ecosystem where anyone can create, trade, and utilize synthetic assets.',
+    platformInterface: 'Platform Interface',
+    overview: {
+      title: 'Synthetic Asset Overview',
+      what: {
+        title: 'What are Synthetic Assets?',
+        description: 'Synthetic assets are digital financial instruments that track the value of an underlying asset, allowing for greater flexibility and accessibility in the financial markets.'
+      },
+      benefits: {
+        title: 'Benefits of Synthetic Assets',
+        description: 'Increased liquidity, reduced counterparty risk, and the ability to gain exposure to a diverse range of assets are some of the key advantages of synthetic assets.'
+      },
+      applications: {
+        title: 'Applications of Synthetic Assets',
+        description: 'Synthetic assets can be used for hedging, speculation, and portfolio diversification, providing new opportunities for investors and traders.'
+      }
+    },
+    features: {
+      title: 'Features and Benefits',
+      decentralized: {
+        title: 'Decentralized Trading',
+        description: 'Monetix leverages a decentralized protocol for secure, transparent, and censorship-resistant trading.'
+      },
+      multiAsset: {
+        title: 'Multi-Asset Support',
+        description: 'Diverse synthetic assets to meet varied investment needs, empowering diverse investment strategies.'
+      },
+      transparency: {
+        title: 'On-Chain Transparency',
+        description: 'All transactions and operations are recorded on the blockchain, ensuring full transparency and accountability.'
+      },
+      earning: {
+        title: 'Earning Model',
+        description: 'Users can generate income through collateral rewards, trading profits, and staking opportunities.'
+      }
+    },
+    community: {
+      title: 'Community and Ecosystem',
+      active: {
+        title: 'Active Community',
+        description: 'Monetix boasts a vibrant and engaged community of users, contributors, and developers who are passionate about the protocol.'
+      },
+      ecosystem: {
+        title: 'Ecosystem Development',
+        description: 'The protocol encourages and supports the growth of the broader decentralized finance (DeFi) ecosystem through partnerships and integrations.'
+      },
+      governance: {
+        title: 'Governance and Discussions',
+        description: 'The Monetix community actively participates in governance decisions and discussions, shaping the future of the protocol.'
+      },
+      education: {
+        title: 'Educational Resources',
+        description: 'Monetix provides educational content and resources to help users understand the benefits and mechanics of synthetic assets.'
+      }
+    },
+    marketData: {
+      title: 'Market Data and Analytics',
+      comprehensive: {
+        title: 'Comprehensive Data',
+        description: 'Monetix provides users with detailed market data, including trading volumes, price movements, and liquidity metrics.'
+      },
+      analytics: {
+        title: 'Advanced Analytics',
+        description: 'Powerful analytics tools help users make informed decisions and track the performance of their synthetic asset holdings.'
+      },
+      dashboards: {
+        title: 'Customizable Dashboards',
+        description: 'Users can personalize their dashboard to monitor the data that is most relevant to their investment strategies.'
+      },
+      historical: {
+        title: 'Historical Data',
+        description: 'Monetix offers extensive historical data, allowing users to analyze past trends and make more informed projections.'
+      }
+    },
+    whyChoose: {
+      title: 'Why Choose Monetix',
+      description: 'Built for traders who demand the best in DeFi. Experience professional-grade derivatives trading.'
+    }
+  },
   hero: {
     title: 'Decentralized',
     subtitle: 'Derivatives Protocol',

@@ -15,10 +15,10 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center text-white p-2 rounded-full hover:bg-gray-800 transition-all"
+      className="flex items-center text-white p-2 rounded-full hover:bg-gray-700 transition-all"
     >
       <Globe className="h-5 w-5" />
-      <span className="ml-2">{i18n.language === 'zh' ? 'EN' : 'ZH'}</span>
+      <span className="ml-2 text-base font-normal bg-gradient-to-r from-purple-400 via-pink-300 to-orange-200 bg-clip-text text-transparent hover:opacity-80">{i18n.language === 'zh' ? 'EN' : 'ZH'}</span>
     </button>
   );
 } 
