@@ -16,29 +16,38 @@ export default function LanguageSwitcher() {
 
   // 处理点击外部关闭下拉菜单
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
 
+    // 同时监听鼠标和触摸事件
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
     };
   }, []);
 
+  // 仅在非触摸设备上使用悬停效果
   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+    if (window.matchMedia('(hover: hover)').matches) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setIsOpen(true);
     }
-    setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 300); // 添加延迟，给用户时间移动到下拉菜单
+    if (window.matchMedia('(hover: hover)').matches) {
+      timeoutRef.current = setTimeout(() => {
+        setIsOpen(false);
+      }, 300);
+    }
   };
 
   const handleLanguageChange = (langCode: string) => {
