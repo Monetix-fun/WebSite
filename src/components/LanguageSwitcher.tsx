@@ -1,24 +1,95 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'zh' ? 'en' : 'zh';
-    i18n.changeLanguage(newLang);
-    // 可选：保存用户语言选择到 localStorage
-    localStorage.setItem('preferred-language', newLang);
+  const languages = [
+    { code: 'zh', label: '中文' },
+    { code: 'en', label: 'English' },
+    { code: 'ja', label: '日本語' }
+  ];
+
+  // 处理点击外部关闭下拉菜单
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300); // 添加延迟，给用户时间移动到下拉菜单
+  };
+
+  const handleLanguageChange = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    localStorage.setItem('preferred-language', langCode);
+    setIsOpen(false);
+  };
+
+  const getCurrentLanguageLabel = () => {
+    const currentLang = languages.find(lang => lang.code === i18n.language);
+    return currentLang?.label || 'English';
   };
 
   return (
-    <button
-      onClick={toggleLanguage}
-      className="flex items-center text-white p-2 rounded-full hover:bg-gray-700 transition-all"
+    <div 
+      ref={dropdownRef} 
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <Globe className="h-5 w-5" />
-      <span className="ml-2 text-base font-normal bg-gradient-to-r from-purple-400 via-pink-300 to-orange-200 bg-clip-text text-transparent hover:opacity-80">{i18n.language === 'zh' ? 'EN' : 'ZH'}</span>
-    </button>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center text-white p-2 rounded-full hover:bg-gray-700/30 transition-all"
+      >
+        <Globe className="h-5 w-5" />
+        <span className="ml-2 text-base font-normal bg-gradient-to-r from-purple-400 via-pink-300 to-orange-200 bg-clip-text text-transparent">
+          {getCurrentLanguageLabel()}
+        </span>
+      </button>
+
+      {/* 下拉菜单 */}
+      {isOpen && (
+        <div 
+          className="absolute right-0 mt-2 w-32 rounded-lg shadow-lg bg-[#31205c] border border-[#2E4DD4]/30 overflow-hidden z-50"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLanguageChange(lang.code)}
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-[#2E4DD4]/10 transition-all
+                ${i18n.language === lang.code 
+                  ? 'bg-gradient-to-r from-purple-400 via-pink-300 to-orange-200 bg-clip-text text-transparent font-medium' 
+                  : 'text-white'}`}
+            >
+              {lang.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 } 
