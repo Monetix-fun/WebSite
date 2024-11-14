@@ -355,7 +355,7 @@ function App() {
               <FaXTwitter className="h-8 w-8" />
             </a>
             <a
-              href="#"
+              href="https://t.me/monetixprotocol"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-100 transition-colors"
