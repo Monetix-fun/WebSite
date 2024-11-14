@@ -38,8 +38,8 @@ function App() {
       <Navbar />
       
       {/* 上半部分 - 较浅的紫色背景 */}
-      <div className="bg-[#251746]">
-        <div className="container mx-auto px-4 py-20 max-w-[960px]">
+      <div className="bg-[#251746] pt-32 pb-20">
+        <div className="container mx-auto px-4 max-w-[960px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl font-medium mb-8 bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent">
@@ -62,8 +62,8 @@ function App() {
       </div>
 
       {/* 下半部分 - 更深的紫色背景 */}
-      <div className="bg-[#2a1954]">
-        <div className="container mx-auto px-4 py-20 max-w-[960px]">
+      <div className="bg-[#2a1954] py-20">
+        <div className="container mx-auto px-4 max-w-[960px]">
           <h2 className="text-4xl font-medium mb-16 bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent">
             {t('home.overview.title')}
           </h2>
@@ -363,7 +363,7 @@ function App() {
               <FaTelegram className="h-8 w-8" />
             </a>
             <a
-              href="https://discord.gg/SnJ3dAPU"
+              href="https://discord.gg/H2QprY7bVy"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-100 transition-colors"

@@ -14,6 +14,25 @@ export default function LanguageSwitcher() {
     { code: 'ja', label: '日本語' }
   ];
 
+  // 在组件加载时设置初始语言
+  useEffect(() => {
+    // 优先使用localStorage中存储的语言偏好
+    const storedLang = localStorage.getItem('preferred-language');
+    // 如果没有存储的语言偏好，则使用浏览器语言
+    if (!storedLang) {
+      const browserLang = navigator.language.toLowerCase();
+      // 检查浏览器语言是否在我们支持的语言列表中
+      const supportedLang = languages.find(lang => 
+        browserLang.startsWith(lang.code)
+      )?.code || 'en';
+      
+      i18n.changeLanguage(supportedLang);
+      localStorage.setItem('preferred-language', supportedLang);
+    } else {
+      i18n.changeLanguage(storedLang);
+    }
+  }, []);
+
   // 处理点击外部关闭下拉菜单
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
